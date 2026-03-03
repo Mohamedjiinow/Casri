@@ -10,9 +10,10 @@ import attendanceRouter from "./routes/attendaceRoute.js";
 
 
 //app config
+dotenv.config();
 const app =express()
 const port = process.env.PORT;
-dotenv.config();
+
 
 //middleware
 
