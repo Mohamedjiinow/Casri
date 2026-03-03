@@ -1,6 +1,12 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-
-export const connectDB = async()=>{
-    await mongoose.connect('mongodb+srv://mr_jinow:mr_jinow@cluster0.fis0tcc.mongodb.net/Casri').then(()=>console.log("DB connected"));
+export const connectDB = async () => {
+    try {
+        // Waxaan isticmaalaynaa xogta ku jirta .env
+        const conn = await mongoose.connect(process.env.MONGODB_URI);
+        console.log(`DB connected: ${conn.connection.host}`);
+    } catch (error) {
+        console.error(`Error: ${error.message}`);
+        process.exit(1); // Server-ka ha iska damiyo haddii DB uu ku xirmi waayo
+    }
 }

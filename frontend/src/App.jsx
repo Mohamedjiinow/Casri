@@ -51,18 +51,15 @@ const App = () => {
                 
 
                 <Route path='/subjects' element={
-                  <ProtectedRoute> <Subjects /> </ProtectedRoute>
-                } />
-
-                <Route path='/feestatus' element={
-                  <ProtectedRoute> <FeeStatus /> </ProtectedRoute>
-                } />
+                  <ProtectedRoute> <Subjects /> </ProtectedRoute>} />
 
                 {/* --- SHARED ROUTES (Admin & Teacher) --- */}
                 <Route path='/students' element={<Students />} />
                 <Route path='/attendance' element={<Attendance />} />
                 <Route path='/add-student' element={<AddStudent />} />
+                <Route path='/feestatus' element={<FeeStatus />} />
                 <Route path='/update-student/:id' element={<AddStudent />} />
+                
 
                 {/* 404 Redirect */}
                 <Route path="*" element={<Navigate to="/" />} />

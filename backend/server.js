@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors"
-import { connectDB } from "./config/db.js"
-import 'dotenv/config'
+import dotenv from 'dotenv';
+import { connectDB } from './config/db.js';
 
 import userRouter from "./routes/userRoute.js";
 import studentRouter from "./routes/studentRoute.js";
@@ -12,6 +12,7 @@ import attendanceRouter from "./routes/attendaceRoute.js";
 //app config
 const app =express()
 const port = process.env.PORT;
+dotenv.config();
 
 //middleware
 
